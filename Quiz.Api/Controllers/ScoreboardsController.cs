@@ -30,14 +30,12 @@ namespace Quiz.Api.Controllers
                 .OrderByDescending(s => s.Points)
                 .ToListAsync();
 
-            if (scoreboards.Count == 0)
+            if (!scoreboards.Any())
                 return NotFound();
 
             return Ok(scoreboards.Select(p => new
             {
                 p.PlayerId,
-                p.Player.Name,
-                p.Player.UserName,
                 scoreboards = new
                 {
                     p.Points,
@@ -61,7 +59,6 @@ namespace Quiz.Api.Controllers
             return Ok(scoreboards.Select(p => new
             {
                 p.PlayerId,
-                p.Player.Name,
                 p.Player.UserName,
                 scoreboards = new
                 {
@@ -86,6 +83,7 @@ namespace Quiz.Api.Controllers
             {
                 await _dbContext.AddAsync(scoreboard);
                 await _dbContext.SaveChangesAsync();
+
                 return Ok(scoreboard);
             }
             catch (Exception ex)

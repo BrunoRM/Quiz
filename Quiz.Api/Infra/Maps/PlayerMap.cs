@@ -11,8 +11,6 @@ namespace Quiz.Api.Infra.Maps
             builder.ToTable("player");
 
             builder.HasKey(p => p.Id);
-
-            builder.HasMany(p => p.Scoreboards);
         }
     }
 }
