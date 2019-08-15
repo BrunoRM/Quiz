@@ -4,7 +4,7 @@ namespace Quiz.Api.Entities
 {
     public class Scoreboard
     {
-        public Scoreboard(int playerId, double points)
+        public Scoreboard(int playerId, int points)
         {
             PlayerId = playerId;
             Points = points;
@@ -13,7 +13,7 @@ namespace Quiz.Api.Entities
 
         public int Id { get; private set; }
         public int PlayerId { get; private set; }
-        public double Points { get; private set; }
+        public int Points { get; private set; }
         public DateTime GeneratedDate { get; private set; }
         public Player Player { get; set; }
     }

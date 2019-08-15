@@ -22,8 +22,8 @@ namespace Quiz.Api
             services.AddMvc();
             services.AddDbContext<AppDbContext>(opt =>
             {
-                opt.UseInMemoryDatabase("quiz");
-                //opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                //opt.UseInMemoryDatabase("quiz");
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             }, ServiceLifetime.Scoped);
 
             services.AddCors(options => options.AddPolicy("QuizCorsPolicy",

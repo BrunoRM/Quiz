@@ -8,6 +8,6 @@ namespace Quiz.Api.Dtos
         public int PlayerId { get; set; }
 
         [Required(ErrorMessage = "Informe a pontuação do Jogador")]
-        public double Points { get; set; }
+        public int Points { get; set; }
     }
 }

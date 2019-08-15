@@ -36,7 +36,7 @@ namespace Quiz.Api.Controllers
             return Ok(scoreboards.Select(p => new
             {
                 p.PlayerId,
-                scoreboards = new
+                scoreboard = new
                 {
                     p.Points,
                     p.GeneratedDate

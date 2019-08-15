@@ -107,13 +107,13 @@ angular.module('quiz').controller('perguntaController', ['$scope', '$timeout', '
             clearInterval(intervalId);
             
             var respostaCerta = {};
-            for (var i = 0; i < $scope.perguntaSelecionada.respostas.length; i++){
-                if ($scope.perguntaSelecionada.respostas[i].respostaCerta === true){
-                    respostaCerta = $scope.perguntaSelecionada.respostas[i];
+            for (var i = 0; i < $scope.perguntaSelecionada.answers.length; i++){
+                if ($scope.perguntaSelecionada.answers[i].isCorrect === true){
+                    respostaCerta = $scope.perguntaSelecionada.answers[i];
                 }
             }
-                
-            if ($scope.resposta == respostaCerta.resposta){
+
+            if ($scope.resposta == respostaCerta.description){
                 $scope.resposta = '';            
                 $scope.resultadoPergunta = 'EXATA';
                 $scope.totalPontos += $scope.numeroPergunta * 100;

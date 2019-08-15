@@ -1,9 +1,8 @@
 angular.module('quiz').controller('placarController', ['$scope', '$http', 'authService', '$location', function($scope, $http, authService, $location){
 
     var carregarPlacaresJogador = function(){
-
-        $http.get(authService.urlAPIBase + '/api/scoreboards/player/' + authService.userId).then(function(response){
-            $scope.placaresJogador = response.data.scoreboards;
+        $http.get(authService.urlAPIBase + '/api/scoreboards/player/' + authService.userId).then(function(response){            
+            $scope.placaresJogador = response.data;
         }, function(error){
             if (error.status === 404)
                 $scope.msgPlacarJogadorNaoEncontrado = 'Nenhum placar encontrado';

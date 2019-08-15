@@ -28,11 +28,11 @@ a {
 }
 
 .form-control{
-    border-color: midnightblue;
+    border-color: steelblue;
 }
 
 .form-control:focus{
-    border-color: midnightblue;
+    border-color: steelblue;
 }
 
 .panel-success{
@@ -41,52 +41,52 @@ a {
 
 .panel-success>.panel-heading {
     color: white;
-    background-color: midnightblue;
-    border-color: midnightblue;
+    background-color: steelblue;
+    border-color: steelblue;
     font-weight: bold;
     border-radius: 0px;
 }
 
 .btn-success{
-    background-color: midnightblue;
+    background-color: steelblue;
     font-weight: bold;
-    border-color: midnightblue;
+    border-color: steelblue;
 }
 
 .btn-success:hover{
-    background-color: darkslateblue;
+    background-color: lightblue;
     font-weight: bold;
-    border-color: darkslateblue;
+    border-color: lightblue;
 }
 
 .btn-success:active{
-    background-color: darkslateblue;
+    background-color: lightblue;
     font-weight: bold;
-    border-color: darkslateblue;
+    border-color: lightblue;
 }
 
 .btn-success:focus{
-    background-color: darkslateblue;
+    background-color: lightblue;
     font-weight: bold;
-    border-color: darkslateblue;
+    border-color: lightblue;
 }
 
 .btn-success:active:focus{
-    background-color: darkslateblue;
+    background-color: lightblue;
     font-weight: bold;
-    border-color: darkslateblue;
+    border-color: lightblue;
 }
 
 .btn-success:disabled:focus{
-    background-color: darkslateblue;
+    background-color: lightblue;
     font-weight: bold;
-    border-color: darkslateblue;
+    border-color: lightblue;
 }
 
 .btn-success:disabled:hover{
-    background-color: darkslateblue;
+    background-color: lightblue;
     font-weight: bold;
-    border-color: darkslateblue;
+    border-color: lightblue;
 }
 
 .panel .panel-heading > h4 {
@@ -100,7 +100,7 @@ a {
 .pergunta{
     text-align: center;
     font-weight: bold;
-    background-color: midnightblue;
+    background-color: steelblue;
     color: white;
     padding: 15px;
     border-radius: 1px;
@@ -112,7 +112,7 @@ a {
     background-color: white;
     font-size: 20px;
     margin-top: 2%;
-    color: darkblue;
+    color: steelblue;
     border-radius: 10px;
     padding: 10px;
 }
