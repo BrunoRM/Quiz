@@ -22,13 +22,24 @@ namespace Quiz.Api
             services.AddMvc();
             services.AddDbContext<AppDbContext>(opt =>
             {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                opt.UseInMemoryDatabase("quiz");
+                //opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             }, ServiceLifetime.Scoped);
+
+            services.AddCors(options => options.AddPolicy("QuizCorsPolicy",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:5004").AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors("QuizCorsPolicy");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

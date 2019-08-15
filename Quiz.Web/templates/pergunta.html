@@ -1,0 +1,60 @@
+<div style="background-color: darkslateblue; margin-top: 4%; border-radius: 3px; box-shadow: 1px 1px 1px black;" class="col-md-6 col-md-offset-3" ng-show="jogoPausado == false">
+
+    <div ng-show="perguntaSelecionada && erros > 0">        
+        <p class="label label-success" style="font-size: 17px; margin-top: 2%; display: inline-block;">Chances: {{erros}}</p>
+        <span class="label label-success" style="font-size: 17px; margin-top: 2%; display: inline-block;">Seus pontos: {{totalPontos}}</span>
+        <h3 style="color: white">Valendo {{numeroPergunta * 100}} pontos</h3>
+        <span style="font-size: 20px; float: right; margin-top: -31px; color: white">{{tempoPergunta}}</span>
+        <div class="pergunta">
+            {{perguntaSelecionada.pergunta}}
+        </div>
+        <form name="pergunta" autocomplete="off" novalidate>
+            <div class="resposta"><input ng-disabled="bloquearSelecao === true" name="resposta" id="resposta" type="radio" value="{{perguntaSelecionada.respostas[0].resposta}}" ng-model="resposta" ng-required="true"><span>{{perguntaSelecionada.respostas[0].resposta}}</span></div>
+            <div class="resposta"><input ng-disabled="bloquearSelecao === true" name="resposta" id="resposta" type="radio" value="{{perguntaSelecionada.respostas[1].resposta}}" ng-model="resposta"><span>{{perguntaSelecionada.respostas[1].resposta}}</span></div>
+            <div class="resposta"><input ng-disabled="bloquearSelecao === true" name="resposta" id="resposta" type="radio" value="{{perguntaSelecionada.respostas[2].resposta}}" ng-model="resposta"><span>{{perguntaSelecionada.respostas[2].resposta}}</span></div>
+            <div class="resposta"><input ng-disabled="bloquearSelecao === true" name="resposta" id="resposta" type="radio" value="{{perguntaSelecionada.respostas[3].resposta}}" ng-model="resposta"><span>{{perguntaSelecionada.respostas[3].resposta}}</span></div>
+            
+            <div ng-class="{'resposta-exata': resultadoPergunta === 'EXATA', 'resposta-errada': resultadoPergunta === 'ERRADA'}">
+                <p ng-show="resultadoPergunta != '' && resultadoPergunta != null"> <i ng-class="{'fa fa-close': resultadoPergunta === 'ERRADA', 'fa fa-check': resultadoPergunta === 'EXATA'}"></i> A RESPOSTA ESTÁ {{resultadoPergunta}}. AGUARDE...</p>
+            </div>
+
+            <div style="margin-top: 2%; margin-bottom: 2%" class="container">
+
+                <div class="row">
+    
+                    <button class="btn btn-success" ng-disabled="pergunta.$invalid || erros == 0 || bloquearSelecao == true" ng-click="proximaPergunta()"> <i class="fa fa-check"></i> Confirmar</button>
+                    <button class="btn btn-danger" ng-disabled="bloquearSelecao == true" ng-click="desistir()"> <i class="fa fa-close"></i> Desistir</button>
+                    <button class="btn btn-warning" ng-disabled="erros == 1 || bloquearSelecao == true" ng-click="pularPergunta()"> <i class="fa fa-hand-o-right"></i> Pular pergunta</button>
+                    <button class="btn btn-success" ng-disabled="bloquearSelecao == true" ng-click="pausar()"><i class="fa fa-pause"></i></button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    
+    <div class="fim-de-jogo" ng-show="!perguntaSelecionada || erros == 0">
+
+        <h1 style="color: white; font-weight: bold">Fim de jogo</h1>
+        <h4>Sua pontuação final foi de {{totalPontos}} Pontos</h4>        
+
+        <button class="btn btn-success" ng-click="novoJogo()"> <i class="fa fa-gamepad"></i> Jogar novamente</button>
+        <button class="btn btn-warning" ng-click="menu()"> <i class="fa fa-sign-out"></i> Sair</button>
+
+    </div>    
+</div>
+
+<div class="col-md-6 col-md-offset-3" style="margin-top: 4%;" ng-show="jogoPausado == true">
+    <div class="panel panel-success">
+        <div class="panel panel-heading">
+            <h4> <i class="fa fa-pause"></i> Pause</h4>
+
+        </div>
+
+        <div class="panel panel-body">
+
+            <button class="btn btn-success col-md-6 col-md-offset-3" ng-click="voltarJogo()"><i class="fa fa-play"></i> Continuar</button>
+            <button class="btn btn-danger col-md-6 col-md-offset-3" ng-click="volume()"> <span ng-show="som === true"> <i class="fa fa-volume-up"></i></span> <span ng-show="som === false"><i class="fa fa-volume-off"></i></span> Música</button>
+            <button class="btn col-md-6 col-md-offset-3" ng-click="menu()"> <i class="fa fa-sign-out"></i> Sair</button>
+        </div>
+    </div>
+</div>

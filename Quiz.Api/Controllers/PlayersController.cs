@@ -41,7 +41,7 @@ namespace Quiz.Api.Controllers
         }
 
         [Route("api/login"), HttpPost]
-        public async Task<IActionResult> AddAsync([FromBody]LoginDto data)
+        public async Task<IActionResult> LoginAsync([FromBody]LoginDto data)
         {
             if (data == null)
                 return BadRequest("Parâmetro não informado");

@@ -1,0 +1,65 @@
+<button class="btn btn-success" ng-click="menu()"><i class="fa fa-arrow-left"></i> Voltar</button>
+<div style="margin-top: 2%;">
+
+    <div class="col-md-6" ng-show="placaresJogador != null && placaresJogador.length != 0">
+    
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <h4> <i class="fa fa-user"></i> Placar Pessoal</h4>
+            </div>
+            <div class="panel-body">
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pontos</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <tr ng-repeat="placar in placaresJogador">
+                            <td>{{placar.pontuacoes.points}}</td>
+                            <td>{{placar.pontuacoes.generatedDate | date : 'dd/MM/yyyy'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>    
+    </div>
+    
+    <div ng-if="msgPlacarNaoEncontrado != null && msgPlacarNaoEncontrado != ''">
+        {{msgPlacarNaoEncontrado}}
+    </div>
+    
+    <div ng-class="{'col-md-6': placaresJogador != null && placaresJogador.length != 0, 'col-md-6 col-md-offset-3': placaresJogador == null || placaresJogador.length == 0}" ng-show="msgPlacarNaoEncontrado == null || msgPlacarNaoEncontrado == ''">
+        <div class="panel panel-success">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <h4> <i class="fa fa-globe"></i> Placar Geral</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Pontos</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <tr ng-repeat="placar in placares">
+                            <td>{{placar.userName}}</td>
+                            <td>{{placar.scoreboard.points}}</td>
+                            <td>{{placar.scoreboard.generatedDate | date : 'dd/MM/yyyy'}}</td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </div>
+            
+        </div>            
+    </div>
+</div>

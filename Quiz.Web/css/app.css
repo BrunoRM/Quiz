@@ -1,0 +1,155 @@
+.error{
+    color: red;
+}
+
+.error > i{
+    color: red;
+}
+
+.link-sem-estilo{
+    text-decoration: none;
+    color: blue;
+}
+
+#spinner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 99999999;
+}
+
+a {
+    cursor: pointer;
+}
+
+.form-control{
+    border-color: midnightblue;
+}
+
+.form-control:focus{
+    border-color: midnightblue;
+}
+
+.panel-success{
+    box-shadow: 2px 4px 9px white;
+}
+
+.panel-success>.panel-heading {
+    color: white;
+    background-color: midnightblue;
+    border-color: midnightblue;
+    font-weight: bold;
+    border-radius: 0px;
+}
+
+.btn-success{
+    background-color: midnightblue;
+    font-weight: bold;
+    border-color: midnightblue;
+}
+
+.btn-success:hover{
+    background-color: darkslateblue;
+    font-weight: bold;
+    border-color: darkslateblue;
+}
+
+.btn-success:active{
+    background-color: darkslateblue;
+    font-weight: bold;
+    border-color: darkslateblue;
+}
+
+.btn-success:focus{
+    background-color: darkslateblue;
+    font-weight: bold;
+    border-color: darkslateblue;
+}
+
+.btn-success:active:focus{
+    background-color: darkslateblue;
+    font-weight: bold;
+    border-color: darkslateblue;
+}
+
+.btn-success:disabled:focus{
+    background-color: darkslateblue;
+    font-weight: bold;
+    border-color: darkslateblue;
+}
+
+.btn-success:disabled:hover{
+    background-color: darkslateblue;
+    font-weight: bold;
+    border-color: darkslateblue;
+}
+
+.panel .panel-heading > h4 {
+    font-family: cursive; font-size: 23px;
+}
+
+.btn{
+    font-weight: bold;
+}
+
+.pergunta{
+    text-align: center;
+    font-weight: bold;
+    background-color: midnightblue;
+    color: white;
+    padding: 15px;
+    border-radius: 1px;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.resposta{
+    background-color: white;
+    font-size: 20px;
+    margin-top: 2%;
+    color: darkblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.resposta > span{
+    margin-left: 2%;
+}
+
+.resposta-exata{
+    margin-top: 2%;
+    background-color: #90EE90;
+    border-radius: 7px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    max-width: 61%;
+}
+
+.resposta-exata > p{
+    margin-left: 2%;
+}
+
+.resposta-errada{
+    margin-top: 2%;
+    background-color: #FA8072;
+    border-radius: 7px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    max-width: 61%;
+}
+
+.resposta-errada > p{
+    margin-left: 2%;
+}
+
+.fim-de-jogo{
+    color: white;
+    padding: 5%;
+}

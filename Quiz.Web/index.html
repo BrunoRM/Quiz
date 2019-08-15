@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="quiz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz</title>
+
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script type="text/javascript" src="libs/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angularjs/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/appConfig.js"></script>
+    <script type="text/javascript" src="app/routeConfig.js"></script>
+
+    <!-- Interceptors -->
+    <script type="text/javascript" src="app/interceptors/loadingInterceptor.js"></script>
+
+    <!-- Controllers  -->
+    <script type="text/javascript" src="app/controllers/rootController.js"></script>
+    <script type="text/javascript" src="app/controllers/perguntaController.js"></script>
+    <script type="text/javascript" src="app/controllers/loginController.js"></script>
+    <script type="text/javascript" src="app/controllers/menuController.js"></script>
+    <script type="text/javascript" src="app/controllers/cadastroController.js"></script>
+    <script type="text/javascript" src="app/controllers/placarController.js"></script>
+
+    <!-- Directives  -->
+    <script type="text/javascript" src="app/directives/audioControllDirective.js"></script>
+
+    <!-- Services  -->
+    <script type="text/javascript" src="app/services/sessionStorageService.js"></script>
+    <script type="text/javascript" src="app/services/authService.js"></script>    
+</head>
+<body ng-controller="rootController" style="background-color: gainsboro; overflow-x: hidden;">
+
+    <audio-controll></audio-controll>
+
+    <div id="spinner" ng-show="loading === true">
+        <i style="margin-top: 20%; margin-left: 46%;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span style="margin-top: 20%; margin-left: 46%;">Carregando...</span>
+    </div>
+    
+    <ng-view></ng-view>
+
+</body>
+</html>

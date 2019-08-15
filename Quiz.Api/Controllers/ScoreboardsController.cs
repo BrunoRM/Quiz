@@ -19,7 +19,7 @@ namespace Quiz.Api.Controllers
         }
 
         [Route("api/scoreboards/player/{playerId}"), HttpGet]
-        public async Task<IActionResult> GetByIdJogador([FromRoute]int playerId)
+        public async Task<IActionResult> GetByPlayerIdAsync([FromRoute]int playerId)
         {
             if (playerId == 0)
                 return BadRequest("Informe um id de jogador");
@@ -60,7 +60,7 @@ namespace Quiz.Api.Controllers
             {
                 p.PlayerId,
                 p.Player.UserName,
-                scoreboards = new
+                scoreboard = new
                 {
                     p.Points,
                     p.GeneratedDate
